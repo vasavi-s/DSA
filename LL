@@ -1,0 +1,57 @@
+#include<stdio.h>
+#include<stdlib.h>
+typedef struct node{
+    int data;
+    struct Node *next;
+}Node;
+Node *head=NULL,*tail=NULL;
+
+Node *CreateNode(){
+    Node *newNode;
+    newNode = (Node*)malloc(sizeof(Node));
+    printf("ENter data");
+    scanf("%d",&newNode->data);
+    newNode->next=NULL;
+    return newNode;
+}
+void adFirst(){
+    Node *temp=CreadeNode();
+    if(head==NULL){
+        head=temp;
+        tail=head;
+        return;
+    }
+    temp->next=head;
+    head=temp;
+}
+void addLast(){
+    Node *temp=CreadeNode();
+    if(head==NULL){
+        head=temp;
+        tail=head;
+        return;
+    }
+    tail->next=temp;
+    tail=temp;
+   
+}
+void insert(int pos)
+{
+    Node *th=head;
+    if(pos<=0)
+    addfirst();
+    if(pos>size)
+    addLast();
+    while(pos>1){
+        th=th->next;
+        --pos;
+    }
+    temp=CreadeNode();
+    temp->next=th->next;
+    th->next=temp;
+
+}
+int main() {
+    
+    addfirst(1);
+}
